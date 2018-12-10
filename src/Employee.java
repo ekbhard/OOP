@@ -6,28 +6,14 @@ public class Employee {
     double yearsInComp;
     double v;
 
-    // Это конструктор класса Employee.
-    public Employee(String name) {
-        this.name = name;
-    }
 
-    public void empYearsInComp(double empYearsInComp ){
-        yearsInComp=empYearsInComp; }
-    // Присвоение возраста работника переменной age.
-    public void empAge(int empAge) {
-        age = empAge;
+    Employee(String n, int a , String desi, double years, double sal){
+        name=n;
+        age=a;
+        designation=desi;
+        yearsInComp=years;
+        salary=sal;
     }
-
-    /* Присвоение переменной designation. */
-    public void empDesignation(String empDesig) {
-        designation = empDesig;
-    }
-
-    /* Присвоение переменной salary. */
-    public void empSalary(double empSalary) {
-        salary = empSalary;
-    }
-
     /* Вывод подробной информации. */
     public void printEmployee() {
         System.out.println("Имя:" + name);
