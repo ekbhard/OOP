@@ -1,33 +1,44 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Employee {
-    String name;
-    int age;
-    String designation;
-    double salary;
-    double yearsInComp;
-    double v;
 
+    private String name;
+    private int age;
+    private String designation;
+    private double startSalary;
+    private double workStartDate;
+    private double v;
 
-    Employee(String n, int a , String desi, double years, double sal){
-        name=n;
-        age=a;
-        designation=desi;
-        yearsInComp=years;
-        salary=sal;
+    public Employee(String name, int age, String designation, double startSalary, double workStartDate) {
+        this.name = name;
+        this.age = age;
+        this.designation = designation;
+        this.startSalary = startSalary;
+        this.workStartDate = workStartDate;
     }
+
     /* Вывод подробной информации. */
-    public void printEmployee() {
-        System.out.println("Имя:" + name);
-        System.out.println("Возраст:" + age);
-        System.out.println("Наименование:" + designation);
-        System.out.println("Заработная плата:" + salary);
+    void printEmployee() {
+        System.out.println("Name:" + name);
+        System.out.println("Age:" + age);
+        System.out.println("Designation:" + designation);
+        System.out.println("Start salary:" + startSalary);
     }
 
-    public void choosePlaceForEmp(){
-        v = salary + yearsInComp * 0.05 * salary * 0.03;
+    double increaseSalaryForEmp(){
+        Calendar calendar =new GregorianCalendar();
+        int currentYear = calendar.get(Calendar.YEAR);
+        int yearsOnWork ;
+        yearsOnWork = (int) (currentYear - workStartDate);
+       return v = startSalary + yearsOnWork * startSalary * 0.05;
     }
 
-    public void printV(){
-        System.out.println(v);
+    int calculateYearsToRetirement(){
+        int years;
+        years = 65-age;
+        assert years > 0 ;
+        return years;
     }
 
 }
