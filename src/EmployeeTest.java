@@ -7,14 +7,21 @@ public class EmployeeTest{
         Employee empThree= new Employee("Иван Иванов",18,"Инженер-программист",1800,2016);
 
         // Вызов метода для каждого созданного объекта.
+        Employee.message = "Hi , i am " + empOne.getName();
 
         empOne.printEmployee();
         System.out.println(empOne.increaseSalaryForEmp());
         System.out.println(empOne.calculateYearsToRetirement());
 
-        empTwo.printEmployee();
-        System.out.println(empTwo.increaseSalaryForEmp());
-        System.out.println(empTwo.calculateYearsToRetirement());
+        empOne.setName("Вася Васин");
+        empOne.printEmployee();
+
+
+
+
+//        empTwo.printEmployee();
+//        System.out.println(empTwo.increaseSalaryForEmp());
+//        System.out.println(empTwo.calculateYearsToRetirement());
 
     }
 }

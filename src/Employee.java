@@ -10,6 +10,16 @@ public class Employee {
     private double workStartDate;
     private double v;
 
+    public String getName() {
+        return name;
+    }
+
+    public static String message ;
+
+    public static String getMessage() {
+        return message;
+    }
+
     public Employee(String name, int age, String designation, double startSalary, double workStartDate) {
         this.name = name;
         this.age = age;
@@ -32,6 +42,10 @@ public class Employee {
         int yearsOnWork ;
         yearsOnWork = (int) (currentYear - workStartDate);
        return v = startSalary + yearsOnWork * startSalary * 0.05;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     int calculateYearsToRetirement(){
